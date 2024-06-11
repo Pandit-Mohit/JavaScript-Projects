@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Like Button</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'filroy';
+    }
+
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: seagreen;
+    }
+
+
+    #container {
+        height: 400px;
+        width: 300px;
+        border-radius: 10px;
+        position: relative;
+        background-color: white;
+        overflow: hidden;
+        overflow: hidden;
+    }
+
+    #container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        
+    }
+
+    #container i {
+        color: red;
+        font-size: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.8;
+        transition: transform ease 0.5s;
+    }
+    </style>
+
+
+
+    <div id="container">
+        <img src="M (1).PNG" alt="">
+        <i class="ri-heart-3-fill"></i>
+    </div>
+
+
+
+    <script>
+     var cnt = document.querySelector("#container");
+     var love = document.querySelector("i");
+
+     cnt.addEventListener("dblclick", function() {
+        love.style.transform = 'translate(-50%, -50%) scale(1)';
+        love.style.opacity = 0.8;
+
+        setTimeout(function() {
+            love.style.opacity = 0;
+        },1000);
+
+        setTimeout(function () {
+            love.style.transform = 'translate(-50%, -50%) scale(0)';
+        }, 2000);
+
+     });
+    </script>
+</body>
+</html>
