@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Images Project</title>
+</head>
+<body>
+            <!--CSS-->
+    <style>
+           *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'filroy';
+        color: white;
+    }
+
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    #main {
+        height: 100%;
+        width: 100%;
+        background-color: #111;
+        position: relative;
+    }
+    .elem {
+        height: 122px;
+        width: 100%;
+        border-bottom: 3px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .elem h1 {
+        font-size: 5vw;
+        position: relative;
+        z-index: 9;
+        mix-blend-mode: difference;
+    }
+
+    .elem img {
+        height: 120px;
+        width: 120px;
+       object-fit: cover;
+       object-position: center;
+       border-radius: 50%;
+       position: absolute;
+       opacity: 0;
+       transition: all linear 0.9s;
+     
+        
+    }
+    </style>
+
+
+                <!--HTML-->
+    <div id="main">
+        <div id="elem1" class="elem">
+            <h1>HTML</h1>
+            <img src="https://envato-shoebox-0.imgix.net/02a7/82d8-452f-4486-b426-cc2f2e517abb/Breakfast_bed_47.jpg?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=807d4a0abcb803eb620b0bf56e64cbdf" alt="">
+        </div>
+
+        <div class="elem">
+        <h1>CSS</h1>
+            <img src="https://envato-shoebox-0.imgix.net/5e16/1bbb-c6db-4769-ae21-990693180cce/KENYIR-0161.JPG?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=7a6e6056f3e414dd2f6db38be3cefb2c" alt="">
+        </div>
+
+        <div class="elem">
+            <h1>JavaScript</h1>
+            <img src="https://envato-shoebox-0.imgix.net/1411/5402-e7e9-4a89-b67d-0eb21beb4ba2/DSC_0085.jpg?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=5ab43dca5b23c4aee78c2800711e752e" alt="">
+        </div>
+
+        <div class="elem">
+            <h1>REACT</h1>
+            <img src="https://envato-shoebox-0.imgix.net/0f97/c6ba-9074-447a-bb50-cc5e25832f79/1523304.jpg?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=fca3a9325ef5fad86b6533daacff1f9a" alt="">
+        </div>
+
+        <div class="elem">
+            <h1>JAVA</h1>
+            <img src="https://envato-shoebox-0.imgix.net/44b6/cac2-ef05-499a-ae4f-0a6bd248d623/1522537.jpg?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=b7f4b5cac6e7747fde342c090dc6a3e3" alt="">
+        </div>
+        
+    </div>
+\
+            <!--JavaScript-->
+    <script>
+   var elem = document.querySelectorAll(".elem");
+   
+   elem.forEach(function(val) {
+    
+    val.addEventListener("mouseenter", function () {
+        val.childNodes[3].style.opacity = 1
+    })
+
+        val.addEventListener("mouseleave", function () {
+            val.childNodes[3].style.opacity = 0
+    })
+
+    val.addEventListener("mousemove", function(mousemove) {
+        val.childNodes[3].style.left = mousemove.x + "px" 
+        val.childNodes[3].top = mousemove.y + "px"
+   });
+   });
+    </script>
+</body>
+</html>
