@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Story Project</title>
+</head>
+<body>
+      <!--CSS-->
+      <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'filroy';
+        
+    }
+
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        background-color: rgb(0, 208, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #card {
+        height: 580px;
+        width: 400px;
+        background-color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 3px solid #000;
+        position: relative;
+    }
+
+    #storiya {
+        height: 160px;
+        width: 100%;
+        border-bottom: 1px solid #dadada;
+        padding: 20px;
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+
+      #storiya::-webkit-scrollbar {
+        display: none;
+      }
+
+      .story {
+      border: 3px solid red;
+        height: 110px;
+        border-radius: 50%;
+        width: 110px;
+        overflow: hidden;
+        display: inline-block;
+        margin-right: 6px;
+      }
+
+      .story img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      #full-screen {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        display: none;
+      }
+ </style>
+
+
+       <!--HTML-->
+       <div id="card">
+        <div id="full-screen"></div>
+        <div id="storiya"></div>
+       </div>
+
+
+        <!--JavaScript-->
+        <script>
+ 
+  var arr = [
+            {dp:"https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=600", story:"https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=600"},
+            {dp:"Images/V3.jpg", story:"Images/V3.jpg"},
+            {dp:"Images/V2.jpg", story:"Images/V2.jpg"},
+            {dp:"Images/V4.jpg", story:"Images/V4.jpg"},
+        ];
+
+        var storiya = document.querySelector("#storiya");
+        var clutter = "";
+
+        arr.forEach(function(elem, idx) {
+            clutter += `<div class="story">
+                <img id="${idx}" src="${elem.dp}" alt="">
+            </div>`;
+        });
+
+        storiya.innerHTML = clutter;
+
+        storiya.addEventListener("click", function(dets) {
+            if (dets.target.tagName === "IMG") {
+                var imgId = dets.target.id;
+                document.querySelector("#full-screen").style.display = "block";
+                document.querySelector("#full-screen").style.backgroundImage = `url(${arr[imgId].story})`;
+
+                setTimeout(function() {
+                    document.querySelector("#full-screen").style.display = "none";
+                }, 3000);
+            }
+        });
+   
+        </script>
+</body>
+</html>
