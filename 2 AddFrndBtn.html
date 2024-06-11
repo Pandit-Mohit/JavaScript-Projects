@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomProject</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'filroy';
+    }
+
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: cornflowerblue;
+    }
+
+    #card {
+        border-radius: 10px;
+        height: 650px;
+        width: 520px;
+        background-color: #fff;
+        padding: 30px;
+        text-align: center;
+
+    }
+
+    #card img {
+        height: 400px;
+        width: 300px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
+    }
+
+    #card h1 {
+        font-weight: 800;
+        font-size: 22px;
+        margin: 10px 0;
+        
+    }
+
+    #card h5 {
+        font-size: 20px;
+        color: green;
+        margin: 10px;
+    }
+
+    #card button {
+        background-color: rgb(22, 221, 155);
+        color: #fff;
+        font-weight: 800;
+        padding: 7px 18px;
+        border-radius: 5px;
+        border: none;
+        margin: 5px;
+        cursor: pointer;
+    }
+/*
+    #card #remove-button {
+        background-color: #dadada;
+        color: #111;
+    }  */
+
+
+</style>
+
+    <div id="card">
+        <img src="category 7.jpg" alt="">
+        <h1>Tannu Sharma</h1>
+        <h5>Unknown</h5>
+        <div id="btn-container">
+            <button id="add-button">Add Friend</button>
+
+        <!--<buttonid="remove-button">Remove<button>-->    
+        </div>
+    </div>
+
+
+
+
+    <script>
+    var istatus = document.querySelector('h5');
+    var btn = document.querySelector('#add-button');
+
+    var check = 0;
+
+  //  var removeFriend = document.querySelector('#remove-button');
+
+    btn.addEventListener("click", function(){
+        if(check == 0) {
+            istatus.innerHTML = "Friends";
+        istatus.style.color = "red";
+        btn.innerHTML ="Remove Friend"
+        
+        check = 1;
+        } else {
+            istatus.innerHTML = "Unknown";
+        istatus.style.color = "green";
+        btn.innerHTML ="Add Friend"
+    
+        check = 0;
+        }
+
+    });
+
+
+
+//    removeFriend.addEventListener("click", function(){
+  //      istatus.innerHTML = "Unknown";
+  //      istatus.style.color = "green";}) 
+    </script>
+</body>
+</html> 
